@@ -3,38 +3,35 @@
 
 #include "node.h"
 
-template <typename T> 
+template <typename T>
 class Iterator {
     private:
         Node<T> *current;
 
     public:
-        Iterator() {
-            // TODO
-        }
+        Iterator() : current(nullptr) {};
 
-        Iterator(Node<T> *node) {
-            // TODO
-        }
+        Iterator(Node<T> *node) : current(node) {};
 
-        Iterator<T> operator=(Iterator<T> other) {          
-            // TODO
+        Iterator<T> operator=(Iterator<T> other) {
+          return this->current = other.current;
         }
 
         bool operator!=(Iterator<T> other) {
-            // TODO
+          return !(this->current == other.current);
         }
 
         Iterator<T> operator++() {
-            // TODO
+          this->current = this->current->next;
+          return *this;
         }
 
         Iterator<T> operator--() {
-            // TODO
+          
         }
 
         T operator*() {
-            // TODO
+            return this->current->data;
         }
 };
 
