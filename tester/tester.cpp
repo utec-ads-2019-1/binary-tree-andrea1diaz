@@ -27,10 +27,10 @@ void Tester::testBSFTree(Mocker mocker, vector<T> elements) {
         T temp = elements.at(index);
         elements.erase(elements.begin() + index);
         test->remove(temp);
-        //ASSERT(!test->find(temp), "There is a problem with the remove or find");
+        ASSERT(!test->find(temp), "There is a problem with the remove or find");
     }
 
-    //ASSERT(elements.size() == test->size(), "There is a problem with the remove or size");
+    ASSERT(elements.size() == test->size(), "There is a problem with the remove or size");
     
     auto it = test->begin();
     for (int j = 0; j < elements.size() && it != test->end(); ++j) {

@@ -22,15 +22,17 @@ class Iterator {
         }
 
         Iterator<T> operator++() {
-          this->current = this->current->next;
+          // Qué es next?  No va a compilar
+          //this->current = this->current->next;
           return *this;
         }
 
         Iterator<T> operator--() {
-          
+          // No está implementado
         }
 
         T operator*() {
+          // Falta el caso vacío
             return this->current->data;
         }
 };
